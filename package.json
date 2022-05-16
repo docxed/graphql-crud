@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r @babel/register src/app.js",
-    "prettier": "npx prettier --write ."
+    "start": "node -r @babel/register -r dotenv/config src/app.js",
+    "dev": "nodemon -r @babel/register -r dotenv/config src/app.js",
+    "format": "npx prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,17 @@
     "@babel/register": "^7.17.7",
     "apollo-server-core": "^3.7.0",
     "apollo-server-express": "^3.7.0",
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "graphql": "^16.5.0",
     "graphql-compose": "^9.0.8",
     "graphql-compose-mongoose": "^9.7.1",
-    "mongoose": "^6.3.3"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.3",
+    "mongoose-bcrypt": "^1.9.0",
+    "nodemon": "^2.0.16"
   },
   "devDependencies": {
     "prettier": "2.6.2"
